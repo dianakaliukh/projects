@@ -1,52 +1,44 @@
 # Лабораторна робота №5
 # Тема: Робота з бібліотеками Python
-
 # Імпорт 10 бібліотек
+# 📦 Стандартні (вже є в Python, не потребують встановлення)
 import math
 import random
 import datetime
 import os
-import time
-import json
-import sys
-import statistics
-import calendar
-import string
 
-#  math — математичні функції
-try:
-    num = 16
-    print(f"Квадратний корінь з {num} =", math.sqrt(num))
-except Exception as e:
-    print("Помилка в блоці math:", e)
+# 🌐 Зовнішні (потрібно встановити через pip)
+from colorama import Fore, Style # кольоровий текст
+import pandas as pd      # для роботи з таблицями (даними)
+import numpy as np       # для обчислень з масивами
+import matplotlib.pyplot as plt  # для побудови графіків
+from faker import Faker  # для генерації фейкових даних
+import emoji             #емодзі
 
-#  random — генерація випадкових чисел
-try:
-    nums = [random.randint(1, 10) for _ in range(5)]
-    print("Випадкові числа:", nums)
-except Exception as e:
-    print("Помилка в блоці random:", e)
+# Використання 5 бібліотек
 
-#  datetime — робота з датою і часом
-try:
-    now = datetime.datetime.now()
-    print("Поточна дата і час:", now.strftime("%Y-%m-%d %H:%M:%S"))
-except Exception as e:
-    print("Помилка в блоці datetime:", e)
+# 1️ math — обчислення квадратного кореня
+num = 25
+print("Квадратний корінь з", num, "=", math.sqrt(num))
 
-#  os — робота з файловою системою
-try:
-    current = os.getcwd()
-    print("Поточна директорія:", current)
-except Exception as e:
-    print("Помилка в блоці os:", e)
+# 2️ random — вибір випадкового числа
+print("Випадкове число від 1 до 10:", random.randint(1, 10))
 
-#  string — робота з рядками
-try:
-    letters = string.ascii_lowercase
-    random_word = ''.join(random.choice(letters) for _ in range(6))
-    print("Випадкове слово:", random_word)
-except Exception as e:
-    print("Помилка в блоці string:", e)
+# 3 emoji — додаємо емодзі до тексту
+print("Python — це класно!", emoji.emojize(":snake: :sparkles:"))
 
-print("\n✅ Програма виконана успішно!")
+# 4 colorama — кольоровий текст
+print(Fore.GREEN + "Цей текст зелений!" + Style.RESET_ALL)
+
+# 5 numpy — створення масиву та знаходження середнього
+arr = np.array([2, 4, 6, 8])
+print("Середнє значення масиву:", np.mean(arr))
+
+# 6 matplotlib — побудова простого графіка
+x = [1, 2, 3, 4, 5]
+y = [n**2 for n in x]
+plt.plot(x, y)
+plt.title("Графік y = x²")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.show()
