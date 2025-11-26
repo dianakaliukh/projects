@@ -1,6 +1,6 @@
 from aiogram import types
 from keyboards.reply import CURRENCIES
-from handlers.utils import get_rate
+from handlers.callbacks import get_rate
 
 async def currency_handler(msg: types.Message):
     cur = msg.text.upper()
