@@ -2,7 +2,7 @@ def pair_counter(filename="text100.txt"):
     pairs = {"kd", "vq", "al"}
     with open(filename, encoding="utf-8") as f:
         for line in f:
-            words = line.strip().split()
+            words = line.strip()
             count = 0
             for i in range(len(words)):
                 w = words[i]
@@ -11,7 +11,7 @@ def pair_counter(filename="text100.txt"):
                     pair = w[j:j+2]
                     if pair in pairs:
                         count += 1
-                # Пара між словами (крім "у" в кінці і "д" на початку)
+                # Пара між словами (крім "k" в кінці і "d" на початку)
                 if i + 1 < len(words):
                     last_char = words[i][-1]
                     first_char = words[i+1][0]
