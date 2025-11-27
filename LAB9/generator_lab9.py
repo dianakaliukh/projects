@@ -2,7 +2,7 @@ def pair_counter(filename="text100.txt"):
     pairs = {"kd", "vq", "al"}
     with open(filename, encoding="utf-8") as f:
         for line in f:
-            words = line.strip()
+            words = line.strip().split()
             count = 0
             for i in range(len(words)):
                 w = words[i]
